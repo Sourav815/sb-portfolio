@@ -1,17 +1,40 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import {  Silkscreen, Bebas_Neue, Exo } from 'next/font/google'
+ 
+
+// subheading
+const silkscreen = Silkscreen({
+  subsets: ['latin'],
+  variable: '--font-Silkscreen',
+  display:'swap',
+  weight:'400'
+})
+
+// Heading
+const BebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  variable: '--font-BebasNeue',
+  display:'swap',
+  weight:'400'
+})
+
+// paragraph
+const exo = Exo({
+  subsets: ['latin'],
+  variable: '--font-Exo',
+  display:'swap',
+  weight:'300'
+})
+
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,8 +49,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${silkscreen.variable} ${BebasNeue.variable} ${exo.variable} antialiased sm:py-8 sm:px-24 p-2`}
       >
+        <Navbar/>
         {children}
       </body>
     </html>
