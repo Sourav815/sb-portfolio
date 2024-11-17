@@ -24,10 +24,10 @@ export function Description() {
         >
           <div className="flex flex-col items-center p-6">
             {/* Buttons */}
-            <div className="flex mb-6 bg-transparent border-[0.1px] border-gray-400 p-2 text-amber-200">
+            <div className="flex mb-6 bg-transparent border-[0.1px] border-gray-400 p-2 text-amber-200 space-x-1">
               <button
                 onClick={() => setActiveTab("Experience")}
-                className={`p-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Experience"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
@@ -37,17 +37,17 @@ export function Description() {
               </button>
               <button
                 onClick={() => setActiveTab("Skills")}
-                className={`p-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Skills"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
                 }`}
               >
-                Skills
+                Skill
               </button>
               <button
                 onClick={() => setActiveTab("Education")}
-                className={`p-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Education"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
@@ -57,13 +57,13 @@ export function Description() {
               </button>
               <button
                 onClick={() => setActiveTab("Achievements")}
-                className={`p-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Achievements"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
                 }`}
               >
-                Achievements
+                Achievement
               </button>
             </div>
 
@@ -71,7 +71,7 @@ export function Description() {
           </div>
         </motion.h1>
       </LampContainer>
-      <div className="w-full">
+      <div className="w-full duration-300">
         {activeTab === "Experience" && <Experience />}
         {activeTab === "Education" && <Education />}
         {activeTab === "Skills" && <Skills />}

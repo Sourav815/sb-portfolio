@@ -5,7 +5,7 @@ import { ContainerScroll } from "./ui/container-scroll-animation";
 
 const reviews = ["Engineer", "Designer", "Developer"];
 
-const ReviewCard = ({ idx, review }: { idx: number; review: string }) => {
+const ReviewCard = ({review }: { review: string }) => {
   return (
     <figure
       className={cn(

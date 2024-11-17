@@ -9,6 +9,8 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
+    designation: string;
+    date: string;
     description: string;
     link: string;
   }[];
@@ -49,8 +51,10 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <CardTitle className="paragraph font-bold text-xl">{item.title}</CardTitle>
+            <Designation className="paragraph font-bold text-md">{item.designation}</Designation>
+            <Date className="paragraph font-bold text-md">{item.date}</Date>
+            <CardDescription className="paragraph ">{item.description}</CardDescription>
           </Card>
         </Link>
       ))}
@@ -91,6 +95,32 @@ export const CardTitle = ({
     </h4>
   );
 };
+export const Designation = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <h4 className={cn("text-zinc-400 font-bold tracking-wide mt-4", className)}>
+      {children}
+    </h4>
+  );
+};
+export const Date = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <h4 className={cn("text-zinc-400 font-bold tracking-wide mt-1", className)}>
+      {children}
+    </h4>
+  );
+};
 export const CardDescription = ({
   className,
   children,
@@ -101,7 +131,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-8 text-teal-300 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

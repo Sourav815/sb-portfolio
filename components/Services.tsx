@@ -1,9 +1,7 @@
 import React from "react";
 import { MagicCard } from "./ui/magic-card";
 import Image from "next/image";
-import AnimatedGradientText from "./ui/animated-gradient-text";
 import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -119,7 +117,7 @@ const Services = () => {
               </h2>
             </div>
             <div className="p-6 border-[0.1rem] border-slate-600 mr-8 rounded-tr-xl border-l-0 border-b-0 flex flex-col justify-start ">
-              <div className="subheading text-amber-600 text-xl my-2 group-hover:translate-x-4 duration-500">
+              <div className="subheading text-amber-200 text-xl my-2 group-hover:translate-x-4 duration-500">
                 {service.title}
               </div>
               <p className="paragraph text-teal-300 text-base group-hover:translate-x-4 duration-500">
@@ -129,7 +127,7 @@ const Services = () => {
                 <ul className="flex flex-wrap justify-start gap-2">
                   {service.technology.map((tech, idx) => (
                     <li key={idx} className="">
-                      <div className=" mx-auto flex flex-row items-center justify-start rounded-2xl bg-white px-2 py-1.5 text-sm font-medium">
+                      <div className=" mx-auto flex flex-row items-center justify-start rounded-2xl bg-white px-2 py-1.5 text-xs font-medium">
                         <Image
                           src={tech.icon}
                           alt="icon"
