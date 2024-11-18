@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "./ui/lamp";
 import { Experience } from "./Experience";
-import Education from "./Education";
-import Skills from "./Skills";
+import { Education } from "./Education";
+import { Skills } from "./Skills";
+import Achievements  from "./Achievements";
 
 export function Description() {
   const [activeTab, setActiveTab] = useState("Experience");
@@ -27,7 +28,7 @@ export function Description() {
             <div className="flex mb-6 bg-transparent border-[0.1px] border-gray-400 p-2 text-amber-200 space-x-1">
               <button
                 onClick={() => setActiveTab("Experience")}
-                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 md:px-6 py-1 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Experience"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
@@ -37,7 +38,7 @@ export function Description() {
               </button>
               <button
                 onClick={() => setActiveTab("Skills")}
-                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 md:px-6 py-1 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Skills"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
@@ -47,7 +48,7 @@ export function Description() {
               </button>
               <button
                 onClick={() => setActiveTab("Education")}
-                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 md:px-6 py-1 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Education"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
@@ -57,7 +58,7 @@ export function Description() {
               </button>
               <button
                 onClick={() => setActiveTab("Achievements")}
-                className={`px-3 py-2 rounded-full hover:bg-slate-700 hover:text-white ${
+                className={`px-3 md:px-6 py-1 rounded-full hover:bg-slate-700 hover:text-white ${
                   activeTab === "Achievements"
                     ? "bg-slate-700 text-white border-2"
                     : "bg-transparent"
@@ -75,6 +76,7 @@ export function Description() {
         {activeTab === "Experience" && <Experience />}
         {activeTab === "Education" && <Education />}
         {activeTab === "Skills" && <Skills />}
+        {activeTab === "Achievements" && <Achievements />}
       </div>
     </div>
   );

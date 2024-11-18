@@ -95,14 +95,14 @@ const Services = () => {
     },
   ];
   return (
-    <div className="bg-transparent ">
+    <div className="bg-transparent mt-8 md:mt-24">
       <h1 className="heading text-3xl md:text-[4rem] font-bold leading-none tracking-widest text-center mb-10">Services</h1>
       <div className="flex flex-wrap gap-4 justify-center">
         {services.map((service, idx) => (
           <MagicCard
             key={idx}
-            className="cursor-pointer flex-col items-center justify-center shadow-2xl text-4xl bg-transparent w-[26rem] group"
-            gradientColor={"#262626"}
+            className="cursor-pointer flex-col items-center justify-center shadow-2xl text-4xl bg-transparent w-[26rem] h-[32rem] group"
+            gradientColor={"#061142"}
           >
             <div className="flex flex-row justify-between py-2 px-6">
               <Image
@@ -126,8 +126,8 @@ const Services = () => {
               <div className="mt-2 flex flex-wrap justify-start group-hover:translate-x-4 duration-500">
                 <ul className="flex flex-wrap justify-start gap-2">
                   {service.technology.map((tech, idx) => (
-                    <li key={idx} className="">
-                      <div className=" mx-auto flex flex-row items-center justify-start rounded-2xl bg-white px-2 py-1.5 text-xs font-medium">
+                    <li key={idx}>
+                      <div className="mx-auto flex flex-row items-center justify-start rounded-2xl bg-white px-2 py-1.5 text-xs font-medium">
                         <Image
                           src={tech.icon}
                           alt="icon"

@@ -23,8 +23,7 @@ const ReviewCard = ({review }: { review: string }) => {
 
 export function Intro() {
   return (
-    <div className="flex flex-col mt-96 lg:mt-8 justify-center w-full text-center ">
-      {/* <h1 className="heading text-2xl">Curious About Me? Here’s the Scoop!</h1> */}
+    <div className="flex flex-col mt-[28rem] lg:mt-8 justify-center w-full text-center ">
       <div className="relative z-[-10] flex h-32 w-full flex-col items-center justify-center overflow-hidden md:shadow-xl bg-[#020617]">
         <Marquee reverse pauseOnHover className="[--duration:20s]">
           {reviews.map((review, idx) => (

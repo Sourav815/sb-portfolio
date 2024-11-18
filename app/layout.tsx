@@ -3,32 +3,31 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-import {  Silkscreen, Bebas_Neue, Exo } from 'next/font/google'
- 
+import { Silkscreen, Bebas_Neue, Exo } from "next/font/google";
 
 // subheading
 const silkscreen = Silkscreen({
-  subsets: ['latin'],
-  variable: '--font-Silkscreen',
-  display:'swap',
-  weight:'400'
-})
+  subsets: ["latin"],
+  variable: "--font-Silkscreen",
+  display: "swap",
+  weight: "400",
+});
 
 // Heading
 const BebasNeue = Bebas_Neue({
-  subsets: ['latin'],
-  variable: '--font-BebasNeue',
-  display:'swap',
-  weight:'400'
-})
+  subsets: ["latin"],
+  variable: "--font-BebasNeue",
+  display: "swap",
+  weight: "400",
+});
 
 // paragraph
 const exo = Exo({
-  subsets: ['latin'],
-  variable: '--font-Exo',
-  display:'swap',
-  weight:'300'
-})
+  subsets: ["latin"],
+  variable: "--font-Exo",
+  display: "swap",
+  weight: "300",
+});
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -48,10 +47,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <head>
+        <link rel="icon" href="/favicon.png" sizes="any" />
+      </head> */}
       <body
         className={`${silkscreen.variable} ${BebasNeue.variable} ${exo.variable} antialiased sm:py-8 sm:px-24 p-2`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
       </body>
     </html>

@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import DotPattern from "./dot-pattern";
 
 export const HoverEffect = ({
   items,
@@ -51,10 +52,16 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle className="paragraph font-bold text-xl">{item.title}</CardTitle>
-            <Designation className="paragraph font-bold text-md">{item.designation}</Designation>
-            <Date className="paragraph font-bold text-md">{item.date}</Date>
-            <CardDescription className="paragraph ">{item.description}</CardDescription>
+            <CardTitle className="subheading font-semibold text-xl">
+              {item.title}
+            </CardTitle>
+            <Designation className="heading tracking-widest text-md">
+              {item.designation}
+            </Designation>
+            <Date className="paragraph font-bold text-sm">{item.date}</Date>
+            <CardDescription className="paragraph ">
+              {item.description}
+            </CardDescription>
           </Card>
         </Link>
       ))}
@@ -72,10 +79,15 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "h-full w-full p-4 overflow-hidden bg-[#080b20] border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
+      <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+        )}
+      />
       <div className="relative z-50">
         <div className="p-4">{children}</div>
       </div>
